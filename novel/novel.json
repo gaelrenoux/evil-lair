@@ -1,34 +1,52 @@
 {
-  "name": "testGame",
-  "version": "0.2.0",
+  "name": "Lair of Evil",
+  "version": "0.0.0",
   "inventories": [
+    /* personal inventory */
     [
-      {"name": "sword", "value": 1, "hidden": false},
+      {"name": "handgun", "value": 1, "displayName": "My trusted Glock V45H", "hidden": false},
+      {"name": "sandwich", "value": 5, "hidden": false}
+    ],
+    /* lair inventory */
+    [
+      {"name": "sword", "value": 5, "hidden": false},
+      {"name": "playerName", "value": "Blorgg the Conqueror", "hidden": true}
+    ],
+    /* global resources */
+    [
+    ],
+    /* history */
+    [
+      {"name": "playerName", "value": "Dr. Death van Doom", "hidden": true}
+      {"name": "playerTitle", "value": "Sir", "hidden": true}
+      {"name": "butler", "value": "Mook #775", "hidden": true}
+    ],
+    /* samples */
+    [
       {"name": "sandwich", "displayName": "[csv]", "description": "[csv]", "value": 5, "hidden": false},
       {"name": "magicalshield", "displayName": [{"language":"english","content":"Magical Shield"},{"language":"finnish","content":"Taikakilpi"}], "description": [{"language":"english","content":"A very magical shield. Does not do anything."},{"language":"finnish","content":"Todella maaginen kilpi. Ei tee mitään."}], "value": 1, "hidden": false},
       {"name": "villagesSaved", "value": 0, "hidden": true},
       {"name": "dragonsKilled", "value": 1, "hidden": true},
       {"name": "playerName", "value": "Default Name", "hidden": true},
-      {"name": "introductionSeen", "value": 0, "hidden": true}
-    ],
-    [
+      {"name": "introductionSeen", "value": 0, "hidden": true},
       {"name": "sword", "value": 5, "hidden": false},
       {"name": "playerName", "value": "Blorgg the Conqueror", "hidden": true}
     ],
-    [],
-    [],
-    [],
-    []
   ],
   "scenes": [
     {
       "name": "start",
-      "text": "SUPER AMAZING MEDIEVAL ADVENTURE!<br>[file scene2]",
-      "style": "main-menu",
-      "changeInventory": 1,
+      "text": "Welcome to the lair, $playerTitle. I am Mook #2814 and I am proud to be the first to welcome you. We really hope to help you conquer the world !",
+      "style": "lair",
+      "changeInventory": 0,
       "choices": [
         {
-          "text": "Start",
+          "text": "Thank you, Mook #2814",
+          "name": "Continue",
+          "nextScene": "road"
+        },
+        {
+          "text": "Do you mind if I call you Alfred, Alfred ?",
           "name": "Continue",
           "nextScene": "road"
         },
